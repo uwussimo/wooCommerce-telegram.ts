@@ -1,0 +1,15 @@
+{
+  "name": "tmplbot",
+  "version": "1.0.0",
+  "description": "Tmpl bot helps to respond using template messages",
+  "main": "./dist/bot.js",
+  "author": "Mukhammadyusuf Abdurakhimov <icoderx@yandex.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "grammy": "^1.12.0"
+  }
+}
