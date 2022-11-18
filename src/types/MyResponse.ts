@@ -6,16 +6,19 @@ export class MyResponse {
   public title: string;
   public description: string;
   public message_text: string;
+  public thumbnail_url: string | null;
   public keyboard: InlineKeyboard | null;
 
   constructor(
     title: string,
-    message_text: string,
+    description: string,
+    thumbnail_url: string | null,
     keyboard?: InlineKeyboard | null
   ) {
     this.title = title;
-    this.description = message_text;
-    this.message_text = message_text;
+    this.description = description;
+    this.message_text = `<b>${title}</b>\n${description}`;
+    this.thumbnail_url = thumbnail_url;
     this.keyboard = keyboard || null;
   }
   returnResponse() {
@@ -24,8 +27,7 @@ export class MyResponse {
       id: this.id,
       title: this.title,
       description: this.description,
-      thumb_url:
-        'https://wp-contets-s3-bucket.s3.amazonaws.com/wp-content/uploads/2022/09/24073415/1_org_zoom-703-800x1200.jpg',
+      thumb_url: this.thumbnail_url,
       input_message_content: {
         message_text: this.message_text,
         parse_mode: 'HTML',
